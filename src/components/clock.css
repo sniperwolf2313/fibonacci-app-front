@@ -1,0 +1,17 @@
+/* Clock.css */
+.clock-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .clock-heading {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .clock-time {
+    font-size: 3rem;
+    color: #007bff;
+    font-weight: bold;
+  }
+  

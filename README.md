@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Aplicación de Serie Fibonacci
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Esta aplicación permite generar una serie Fibonacci basada en una hora proporcionada por el usuario o utilizando la hora del servidor. Los resultados se envían por correo electrónico y se almacenan en el historial de la aplicación.
 
-## Available Scripts
+## Características
 
-In the project directory, you can run:
+- Genera una serie Fibonacci basada en una hora proporcionada por el usuario o en la hora actual del servidor.
+- Envía el resultado de la serie por correo electrónico.
+- Almacena el historial de series generadas.
+- Interfaz de usuario desarrollada con React y Material-UI.
+- Backend utilizando AWS Lambda y API Gateway.
 
-### `npm start`
+## Tecnologías Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend:**
+  - React
+  - Material-UI
+  - Axios
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Backend:**
+  - AWS Lambda
+  - API Gateway
+  - AWS SES (para el envío de correos electrónicos)
 
-### `npm test`
+- **Base de Datos:**
+  - (Si se utiliza alguna base de datos para el historial, especifícala aquí, como DynamoDB)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instalación
 
-### `npm run build`
+### Requisitos
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js (versión 14.x o superior)
+- npm o yarn
+- AWS CLI configurado con credenciales adecuadas (si trabajas con la parte del backend)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Configuración del Frontend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/sniperwolf2313/fibonacci-app-front.git
+   ```
+ 2. Navega al directorio del proyecto:  
+```bash
+   cd fibonacci-app-front
+```
+3. Instala las dependencias:
+```bash
+npm install
+# o
+yarn install
+```
 
-### `npm run eject`
+### Inicia el servidor de desarrollo:
+```bash
+npm start
+# o
+yarn start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Interfaz de Usuario:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Ingresa una hora en el formato HH:MM
+o selecciona la opción de usar la hora del servidor.
+Haz clic en "Generar Fibonacci" para obtener la serie Fibonacci.
+El resultado se enviará al correo electrónico configurado y se almacenará en el historial.
+Historial:
+Consulta el historial de series generadas para ver las series y los tiempos de generación anteriores.

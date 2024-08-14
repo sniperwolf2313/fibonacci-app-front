@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Provider } from 'react-redux';
+import { store } from './store/reducers/store';
+import FibonacciForm from './components/FibonacciForm';
+import FibonacciHistory from './components/FibonacciHistory';
+import useFibonacci from './hooks/useFibonacci';
+import Clock from './components/Clock';
 
-function App() {
+const App = () => {
+  const { generateFibonacci } = useFibonacci();
+
+  const handleGenerate = (seed1, seed2) => {
+    generateFibonacci(seed1, seed2);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Clock />
+        <FibonacciForm onGenerate={handleGenerate} />
+        <FibonacciHistory />
+      </div>
+    </Provider>
   );
-}
+};
 
 export default App;
+

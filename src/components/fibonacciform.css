@@ -1,0 +1,59 @@
+/* FibonacciForm.css */
+.fibonacci-form-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  .fibonacci-form-container h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .fibonacci-form-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .fibonacci-form-container input[type="text"] {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .fibonacci-form-container label {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .fibonacci-form-container input[type="checkbox"] {
+    margin-right: 8px;
+  }
+  
+  .fibonacci-form-container p {
+    color: red;
+    font-size: 0.875rem;
+    margin-bottom: 10px;
+  }
+  
+  .fibonacci-form-container button {
+    padding: 10px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .fibonacci-form-container button:hover {
+    background-color: #0056b3;
+  }
+  
