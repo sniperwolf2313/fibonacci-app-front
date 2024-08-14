@@ -14,7 +14,6 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_HISTORY:
-      // Evita duplicados basándote en la hora y la serie
       if (state.history.some(entry => entry.time === action.payload.time && 
                                         JSON.stringify(entry.series) === JSON.stringify(action.payload.series))) {
         return state;

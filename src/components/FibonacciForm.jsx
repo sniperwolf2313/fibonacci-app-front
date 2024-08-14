@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { addToHistory } from '../store/reducers/store';
 import useFibonacci from '../hooks/useFibonacci';
-import './fibonacciform.css'; // Asegúrate de que la ruta sea correcta
+import './fibonacciform.css';
 
 const FibonacciForm = ({ onGenerate }) => {
   const [manualTime, setManualTime] = useState('');
@@ -51,6 +51,16 @@ const FibonacciForm = ({ onGenerate }) => {
       executionTime = new Date().toLocaleDateString() + ' ' + manualTime;
       seed1 = parseInt(mm.toString().padStart(2, '0')[0], 10);
       seed2 = parseInt(mm.toString().padStart(2, '0')[1], 10);
+      const date = new Date();
+      date.setHours(hh);
+      date.setMinutes(mm);
+      date.setSeconds(ss);
+      executionTime = date.toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true,
+      });
     }
 
     if (isNaN(seed1) || isNaN(seed2) || seed1 < 0 || seed2 < 0) return;
@@ -61,8 +71,8 @@ const FibonacciForm = ({ onGenerate }) => {
     setError('');
 
     try {
-      await axios.post('https://x015f8sxtc.execute-api.us-east-1.amazonaws.com/SendEmailsFibonacci', {
-        recipientEmail: 'maicol.cardenas2313@gmail.com',
+      await axios.post('https://vpxn1rdqu7.execute-api.us-east-1.amazonaws.com/SendEmailsFibonacci', {
+        recipientEmail: 'maicol.cardenas2313@gmail.com,didier.correa@proteccion.com.co,correalondon@gmail.com',
         subject: 'Prueba Técnica – Michael Stev Cardenas Quintero',
         body: `Hora: ${executionTime}\nSerie: ${result.join(', ')}`
       });
@@ -78,7 +88,7 @@ const FibonacciForm = ({ onGenerate }) => {
       <h2>Generar Serie Fibonacci</h2>
       <form onSubmit={handleSubmit}>
         <input
-          type="text"
+          type="numeric"
           value={manualTime}
           onChange={handleChange}
           disabled={useServerTime}
